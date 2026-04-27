@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        blockquote { font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Random Quotes</h1>
+    <blockquote id="quote"></blockquote>
+    <button id="new-quote">Get New Quote</button>
+    <script>
+        const quotes = [
+            "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+            "The way to get started is to quit talking and begin doing. - Walt Disney",
+            "Life is what happens when you're busy making other plans. - John Lennon",
+            "You miss 100% of the shots you don't take. - Wayne Gretzky"
+        ];
+
+        function getRandomQuote() {
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').innerText = quote;
+        }
+
+        document.getElementById('new-quote').addEventListener('click', getRandomQuote);
+
+        // Show a quote on page load
+        getRandomQuote();
+    </script>
+</body>
+</html>
